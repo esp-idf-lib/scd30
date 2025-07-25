@@ -11,7 +11,7 @@ Driver for SCD30 CO₂ sensor.
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/scd30^1.0.5
+idf.py add-dependency esp-idf-lib/scd30^1.0.5
 ```
 
 ## Support
