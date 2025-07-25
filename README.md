@@ -1,5 +1,9 @@
 # esp-idf-lib/scd30
 
+[![Build examples](https://github.com/esp-idf-lib/scd30/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/scd30/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/scd30/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/scd30/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/scd30/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/scd30/actions/workflows//validate-component.yml)
+
 Driver for SCD30 CO₂ sensor.
 
 * [Documentation](https://esp-idf-lib.github.io/scd30/)
@@ -11,7 +15,7 @@ Driver for SCD30 CO₂ sensor.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/scd30^1.0.5
+idf.py add-dependency esp-idf-lib/scd30
 ```
 
 ## Support
