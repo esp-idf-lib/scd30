@@ -1,5 +1,5 @@
 ---
-version: 1.0.10
+version: 1.0.11
 description: Driver for SCD30 CO₂ sensor
 license: BSD-3
 targets:
