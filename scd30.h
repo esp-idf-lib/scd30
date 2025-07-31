@@ -2,7 +2,7 @@
  * Copyright (c) 2021, Sensirion AG
  * Copyright (c) 2021 Ruslan V. Uss <unclerus@gmail.com>
  * Copyright (c) 2021 Nate Usher <n.usher87@gmail.com>
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
@@ -35,11 +35,11 @@
  * ESP-IDF driver for Sensirion SCD30 CO2 sensor.
  *
  * Adapted from https://github.com/UncleRus/esp-idf-lib/tree/master/components/scd4x
- * 
+ *
  * Copyright (c) 2021, Sensirion AG
  * Copyright (c) 2021 Ruslan V. Uss <unclerus@gmail.com>
  * Copyright (c) 2021 Nate Usher <n.usher87@gmail.com>
- * 
+ *
  * BSD Licensed as described in the file LICENSE
  */
 #ifndef __SCD30_H__
@@ -80,7 +80,7 @@ esp_err_t scd30_free_desc(i2c_dev_t *dev);
  * Signal update interval default is 2 seconds.
  *
  * @param dev           Device descriptor
- * @param p_comp        Optional ambient pressure compensation in mBar, 0 to deactivate 
+ * @param p_comp        Optional ambient pressure compensation in mBar, 0 to deactivate
  * @return              `ESP_OK` on success
  */
 esp_err_t scd30_trigger_continuous_measurement(i2c_dev_t *dev, uint16_t p_comp);
@@ -102,8 +102,8 @@ esp_err_t scd30_stop_continuous_measurement(i2c_dev_t *dev);
  * Saved in non-volatile memory.
  *
  * @param dev                   Device descriptor
- * @param interval_seconds      Measurement interval in seconds 
- * 
+ * @param interval_seconds      Measurement interval in seconds
+ *
  * @return         `ESP_OK` on success
  */
 esp_err_t scd30_get_measurement_interval(i2c_dev_t *dev, uint16_t *interval_seconds);
@@ -115,8 +115,8 @@ esp_err_t scd30_get_measurement_interval(i2c_dev_t *dev, uint16_t *interval_seco
  * Saved in non-volatile memory.
  *
  * @param dev                   Device descriptor
- * @param interval_seconds      Measurement interval in seconds 
- * 
+ * @param interval_seconds      Measurement interval in seconds
+ *
  * @return         `ESP_OK` on success
  */
 esp_err_t scd30_set_measurement_interval(i2c_dev_t *dev, uint16_t interval_seconds);
@@ -168,20 +168,20 @@ esp_err_t scd30_set_automatic_self_calibration(i2c_dev_t *dev, bool enabled);
 
 /**
  * @brief Get Forced Recalibration Value
- * 
+ *
  * See scd_30_set_forced_recalibration_value.
- * 
- * The most recently used reference value is retained in volatile memory and 
- * can be read out with the command sequence given below. After repowering 
+ *
+ * The most recently used reference value is retained in volatile memory and
+ * can be read out with the command sequence given below. After repowering
  * the sensor, the command will return the standard reference value of 400 ppm.
- * 
+ *
  * @param dev                      Device descriptor.
- * @param correction_value         FRC correction value in CO₂ ppm 
- * 
+ * @param correction_value         FRC correction value in CO₂ ppm
+ *
  * @return                         `ESP_OK` on success
  */
 esp_err_t scd30_get_forced_recalibration_value(i2c_dev_t *dev,
-        uint16_t *correction_value);
+                                               uint16_t *correction_value);
 
 /**
  * @brief Set Forced Recalibration Value.
@@ -190,29 +190,29 @@ esp_err_t scd30_get_forced_recalibration_value(i2c_dev_t *dev,
  * value of the CO2 concentration in close proximity to the SCD30 is available.
  * For best results,the sensor has to be run in a stable environment in continuous
  * mode at a measurement rateof 2s for at least two minutes before applying the FRC
- * command and sending the reference value. Setting a reference CO2 concentration 
+ * command and sending the reference value. Setting a reference CO2 concentration
  * by the method described here will always supersede corrections from the ASC
- * 
+ *
  * Imposes a permanent update to the calibration curve which persists after repowering
  * the sensor.
  * @param dev                      Device descriptor.
  * @param target_co2_concentration Target CO₂ concentration in ppm. (400 <= val <= 2000)
- *                                 
+ *
  * @return                         `ESP_OK` on success
  */
 esp_err_t scd30_set_forced_recalibration_value(i2c_dev_t *dev,
-        uint16_t target_co2_concentration);
+                                               uint16_t target_co2_concentration);
 
 /**
  * @brief Get temperature offset in ticks.
  *
- * Get the current temperature offset value saved in non-volatile memory.  
+ * Get the current temperature offset value saved in non-volatile memory.
  *
  * @note Only available in idle mode.
  *
  * @param dev      Device descriptor
  * @param t_offset Temperature offset.
- *                 Convert value to °C by: value * 100; 
+ *                 Convert value to °C by: value * 100;
  * @return         `ESP_OK` on success
  */
 esp_err_t scd30_get_temperature_offset_ticks(i2c_dev_t *dev, uint16_t *t_offset);
@@ -282,10 +282,10 @@ esp_err_t scd30_set_sensor_altitude(i2c_dev_t *dev, uint16_t altitude);
  * @brief Get firmware version.
  *
  * Following command can be used to read out the firmware version of SCD30 module
- * The MSB is the major firmware version, the LSB is the minor firmware version 
+ * The MSB is the major firmware version, the LSB is the minor firmware version
  * @param dev                   Device descriptor
- * @param firmware_version      Firmware version 
- * 
+ * @param firmware_version      Firmware version
+ *
  * @return        `ESP_OK` on success
  */
 esp_err_t scd30_read_firmware_version(i2c_dev_t *dev, uint16_t *firmware_version);
@@ -294,8 +294,8 @@ esp_err_t scd30_read_firmware_version(i2c_dev_t *dev, uint16_t *firmware_version
  * @brief Reset the sensor
  *
  * Soft reset mechanism that forces the sensor into the same state as after powering up
- * After soft reset the sensor will reload all calibrated data. 
- * 
+ * After soft reset the sensor will reload all calibrated data.
+ *
  * @param dev Device descriptor
  * @return    `ESP_OK` on success
  */

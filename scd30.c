@@ -2,7 +2,7 @@
  * Copyright (c) 2021, Sensirion AG
  * Copyright (c) 2021 Ruslan V. Uss <unclerus@gmail.com>
  * Copyright (c) 2021 Nate Usher <n.usher87@gmail.com>
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
@@ -226,7 +226,8 @@ esp_err_t scd30_read_measurement(i2c_dev_t *dev, float *co2, float *temperature,
 {
     CHECK_ARG(co2 || temperature || humidity);
 
-    union {
+    union
+    {
         uint32_t u32;
         float f;
     } tmp;
