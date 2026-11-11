@@ -1,7 +1,7 @@
 ---
 version: 1.0.13
 description: Driver for SCD30 CO₂ sensor
-license: BSD-3
+license: BSD-3-Clause
 dependencies:
   esp-idf-lib/i2cdev:
     version: "*"
